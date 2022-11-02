@@ -1,5 +1,7 @@
 package com.example.secondproject.dto;
 
+import com.example.secondproject.Entity.Article;
+
 public class ArticleForm {
 
     private String title;
@@ -17,5 +19,9 @@ public class ArticleForm {
         sb.append(", content='").append(content).append('\'');
         sb.append('}');
         return sb.toString();
+    }
+
+    public Article toEntity() {
+        return new Article(null, title, content);
     }
 }
